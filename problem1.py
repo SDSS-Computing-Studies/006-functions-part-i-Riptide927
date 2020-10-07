@@ -17,6 +17,3 @@ def hypotenuse(x,y,z):
             return math.sqrt(x**2 - y**2)
         if y > x:
             return math.sqrt(y**2 - x**2)
-        
-print(hypotenuse(4,5,False))
-
