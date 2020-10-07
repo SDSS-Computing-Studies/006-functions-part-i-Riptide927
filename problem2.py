@@ -8,4 +8,7 @@ Note that the coordinates should be signed (positive or negative) floats
 (2 points)
 """
 import math
-
+def distance(x,y):
+    z = x[0] - y[0]
+    n = x[1] - y[1]
+    return math.sqrt(n**2 + z**2)

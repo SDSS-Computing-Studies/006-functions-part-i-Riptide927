@@ -8,3 +8,9 @@ into another number.
 Example: The factors of 10 are 1, 2, 5, 10
 (2 points)
 """
+def factors(x):
+    lis = []
+    for y in range (1,x+1):
+            if x % y ==0:
+                lis.append(y)
+    return lis
