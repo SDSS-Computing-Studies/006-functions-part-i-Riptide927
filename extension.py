@@ -58,30 +58,32 @@ def solutions(a,b,c):
     # Desription:
     #
     # return tuple of float solution1 and float solution2
-    if numSolutions() == 2:
-        x(0) = (-b + math.sqrt((b**2) - (4 * a * c))) / (2*a)
-        x(1) = 0
-        y(0) = (-b - math.sqrt((b**2) - (4 * a * c))) / (2*a)
-        y(1) = 0
-        return x,y
-    elif numSolutions() == 0:
+    if numSolutions(a,b,c) == 2:
+        x= ((-b + math.sqrt((b**2) - (4 * a * c))) / (2*a),(-b - math.sqrt((b**2) - (4 * a * c))) / (2*a))
+        return x
+    elif numSolutions(a,b,c) == 0:
         return 0
-    elif numSolutions() == 1:
-        x(0) = (-b + math.sqrt((b**2) - (4 * a * c))) / (2*a)
-        x(1) = (-b - math.sqrt((b**2) - (4 * a * c))) / (2*a)
-        
+    elif numSolutions(a,b,c) == 1:
+        x = (-b + math.sqrt((b**2) - (4 * a * c))) / (2*a)
+        return x
+       
 
 
-def title():
+def title(x,a,b,c):
     # inputs none
     # return str of All the title and instructions on one line
-
-
+    if numSolutions(a,b,c) == 2:
+        return  "The solutions are " + str(x[0]) + " and " + str(x[1])
+    elif numSolutions(a,b,c) == 0:
+        return "There are no real solutions"
+    elif numSolutions(a,b,c) == 1:
+        return "The solutions is " + str(x)
+        
 def main():
     # Display Title and Instructions
-    print( title() )
-    # Your code and function calls should go here
-
-
+    a = float(input("Give me a number "))
+    b = float(input("Give me a number "))
+    c = float(input("Give me a number "))
+    print( title(solutions(a,b,c),a,b,c) )
 
 main()
