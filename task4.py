@@ -8,7 +8,7 @@ Return False if the number is not an integer
 """
 
 def isInteger(x):
-    if x%1==0:
+    if x % 1 == 0:
         return True
     else:
         return False

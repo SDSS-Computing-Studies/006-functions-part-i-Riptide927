@@ -33,6 +33,7 @@ output is "There is 1 solution, x=??"
 If there are two solutions:
 output is: "The solutions are x=?? and x=??"
 """
+import math
 
 def numSolutions(a,b,c):
     # inputs:
@@ -42,6 +43,12 @@ def numSolutions(a,b,c):
     # Description:
     #
     # return 0, 1 or 2
+    if (b**2 - (4 * a * c)) == 0:
+        return 1
+    elif (b**2 - (4 * a * c)) > 0:
+        return 2
+    elif (b**2 - (4 * a * c)) < 0 :
+        return 0
 
 def solutions(a,b,c):
     #inputs:
@@ -51,6 +58,19 @@ def solutions(a,b,c):
     # Desription:
     #
     # return tuple of float solution1 and float solution2
+    if numSolutions() == 2:
+        x(0) = (-b + math.sqrt((b**2) - (4 * a * c))) / (2*a)
+        x(1) = 0
+        y(0) = (-b - math.sqrt((b**2) - (4 * a * c))) / (2*a)
+        y(1) = 0
+        return x,y
+    elif numSolutions() == 0:
+        return 0
+    elif numSolutions() == 1:
+        x(0) = (-b + math.sqrt((b**2) - (4 * a * c))) / (2*a)
+        x(1) = (-b - math.sqrt((b**2) - (4 * a * c))) / (2*a)
+        
+
 
 def title():
     # inputs none
